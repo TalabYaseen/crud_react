@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import MainNavbar from './components/MainNavbar';
+import Login from './components/Login';
+import Readdata from './components/Readdata';
+import Register from './components/Register';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+// import "@fortawesome/fontawesome-free/css/all.min.css";
+
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <MainNavbar></MainNavbar>
+    <Routes>
+    <Route path='/Login' element={< Login />}></Route>
+    <Route path='/Register' element={< Register />}></Route>
+    <Route path='/Home' element={< Readdata />}></Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
